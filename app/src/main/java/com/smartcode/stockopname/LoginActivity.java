@@ -73,6 +73,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
+        editTextEmail.setEnabled(false);
+        editTextPassword.setEnabled(false);
+        findViewById(R.id.buttonLogin).setEnabled(false);
+
         //if everything is fine
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.URL_LOGIN,
                 new Response.Listener<String>() {
@@ -106,6 +110,9 @@ public class LoginActivity extends AppCompatActivity {
                                 finish();
                                 startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                             } else {
+                                editTextEmail.setEnabled(true);
+                                editTextPassword.setEnabled(true);
+                                findViewById(R.id.buttonLogin).setEnabled(true);
                                 Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                             }
                         } catch (JSONException e) {

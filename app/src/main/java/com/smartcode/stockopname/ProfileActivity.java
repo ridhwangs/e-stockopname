@@ -8,10 +8,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.smartcode.stockopname.network.SharedPrefManager;
+import com.smartcode.stockopname.network.URLs;
 import com.smartcode.stockopname.network.User;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView textViewId, textViewEmail, textViewFullName, textViewDealerID;
+    TextView textViewId, textViewEmail, textViewFullName, textViewDealerID, textViewAPI;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         textViewEmail = (TextView) findViewById(R.id.textViewEmail);
         textViewFullName = (TextView) findViewById(R.id.textViewFullName);
         textViewDealerID = (TextView) findViewById(R.id.textViewDealerID);
+        textViewAPI = (TextView) findViewById(R.id.textViewAPI);
 //
 //        //memulai mengambil data user
         User user = SharedPrefManager.getInstance(this).getUser();
@@ -36,11 +38,23 @@ public class ProfileActivity extends AppCompatActivity {
         textViewEmail.setText(user.getEmail());
         textViewFullName.setText(user.getFullName());
         textViewDealerID.setText(user.getDealerID());
+        textViewAPI.setText(URLs.ROOT_URL);
 
-//        ketika Mulai Stock Opname
+//      ketika Mulai Stock Opname
+
+        findViewById(R.id.buttonMulaiTanpaScanner).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                Intent intent = new Intent(ProfileActivity.this, InputActivity.class);
+                startActivity(intent);
+            }
+        });
+
         findViewById(R.id.buttonMulai).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
                 Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(intent);
             }

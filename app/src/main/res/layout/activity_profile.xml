@@ -6,12 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/gold"
     tools:context=".MainActivity">
-
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/illustration" />
     <LinearLayout
         android:id="@+id/cardView"
         android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="200dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,34 +48,37 @@
                 android:text="Selamat Datang"
                 android:textSize="25sp" />
 
-            <ImageView
+            <TextView
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/illustration"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:gravity="center"
+                android:text="Pastikan Data kamu sudah benar"
+                android:textSize="10sp" />
 
-                android:contentDescription="TODO" />
+
             <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/custom_input"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="40dp">
 
                     <TableRow>
 
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="Company" />
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".2"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="PT. Suryaputra Sarana" />
 
                     </TableRow>
@@ -77,7 +88,7 @@
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="ID" />
 
                         <TextView
@@ -85,7 +96,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".2"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="reading..." />
 
                     </TableRow>
@@ -95,7 +106,7 @@
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="Email" />
 
                         <TextView
@@ -103,7 +114,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".2"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="reading..." />
 
                     </TableRow>
@@ -113,7 +124,7 @@
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="Dealer ID" />
 
                         <TextView
@@ -121,7 +132,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".2"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="reading..." />
 
                     </TableRow>
@@ -131,7 +142,7 @@
                         <TextView
                             android:layout_width="100dp"
                             android:layout_height="wrap_content"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="Full Name" />
 
                         <TextView
@@ -139,27 +150,46 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight=".2"
-                            android:padding="10dp"
+                            android:padding="5dp"
                             android:text="reading..." />
 
                     </TableRow>
+
+                <TableRow
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="API" />
+
+                    <TextView
+                        android:id="@+id/textViewAPI"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:padding="5dp"
+                        android:text="reading..." />
+
+                </TableRow>
 
                 </TableLayout>
 
         </LinearLayout>
     </LinearLayout>
 
-    <RelativeLayout
+
+    <LinearLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -169,41 +199,29 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
             android:text="Mulai Stock Opname" />
-
         <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
-        app:layout_constraintVertical_bias="0.294">
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonMulaiTanpaScanner"
+            style="@style/ButtonDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppinsmedium"
+            android:text="Stock Opname Tanpa Scanner" />
 
         <TextView
             android:id="@+id/buttonLogout"
-            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:fontFamily="@font/poppinsmedium"
             android:gravity="center"
             android:text="Sign Out"
+            android:textColor="@color/black"
             android:textSize="15sp" />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

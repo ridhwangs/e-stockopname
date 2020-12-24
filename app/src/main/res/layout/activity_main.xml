@@ -16,10 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/illustration" />
 
+
     <LinearLayout
         android:id="@+id/cardView"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,17 +33,33 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:fontFamily="@font/poppinsbold"
-                android:gravity="center"
-                android:text="Stock Opname"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/cardView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/buttonProfile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/black"
+                    app:srcCompat="@drawable/abc_vector_test" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:fontFamily="@font/poppinsbold"
+                    android:gravity="center"
+                    android:text="Stock Opname"
+                    android:textColor="@color/black"
+                    android:textSize="25sp" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/editTextLokasi"
@@ -47,32 +67,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
-                android:focusableInTouchMode="true"
                 android:background="@drawable/custom_input"
+                android:focusableInTouchMode="true"
                 android:hint="Lokasi"
                 android:inputType="text"></EditText>
 
             <com.budiyev.android.codescanner.CodeScannerView
                 android:id="@+id/scanner_view"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="300dp"
-                app:autoFocusButtonColor="@android:color/white"
+                app:autoFocusButtonColor="@color/gold"
                 app:autoFocusButtonVisible="true"
                 app:flashButtonColor="@android:color/white"
                 app:flashButtonVisible="true"
                 app:frameAspectRatioHeight="1"
                 app:frameAspectRatioWidth="1"
-                app:frameColor="@android:color/white"
+                app:frameColor="@color/gold"
                 app:frameCornersRadius="0dp"
                 app:frameCornersSize="50dp"
-                app:frameSize="0.75"
+                app:frameSize="0.70"
                 app:frameThickness="2dp"
                 app:maskColor="#77000000" />
+
             <EditText
                 android:id="@+id/editTextKodeBarang"
                 android:layout_width="match_parent"
@@ -93,30 +114,33 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/custom_input"
                 android:hint="Jumlah"
+                android:imeOptions="actionDone"
                 android:inputType="number"></EditText>
         </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout2"
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:paddingBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buttonSave"
+            android:id="@+id/buttonSimpan"
             style="@style/ButtonDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Simpan" />
+            android:text="Simpan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <View
             android:layout_width="0dp"
